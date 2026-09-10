@@ -1,1 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta name="theme-color" content="#050505">
+
+  <title>FCF91 U14F — Ressentis joueuses</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --noir: #050505;
+      --rouge: #d80b35;
+      --rouge-clair: #ef1747;
+      --blanc: #ffffff;
+      --gris: #bdbdbd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+
+      font-family: "Oswald", Arial, sans-serif;
+
+      color: var(--blanc);
+
+      background:
+        radial-gradient(
+          circle at 50% 15%,
+          rgba(216, 11, 53, 0.24),
+          transparent 30%
+        ),
+        linear-gradient(
+          180deg,
+          #050505 0%,
+          #090304 50%,
+          #050505 100%
+        );
+    }
+
+    .home-page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 100vh;
+
+      padding:
+        max(30px, env(safe-area-inset-top))
+        20px
+        max(30px, env(safe-area-inset-bottom));
+    }
+
+    .home-card {
+      width: min(100%, 600px);
+
+      padding: 45px 25px;
+
+      text-align: center;
+
+      background: rgba(8, 8, 8, 0.96);
+
+      border: 1px solid rgba(216, 11, 53, 0.45);
+      border-radius: 28px;
+
+      box-shadow:
+        0 0 35px rgba(216, 11, 53, 0.15),
+        0 25px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    .logo {
+      display: block;
+
+      width: 130px;
+      height: 130px;
+
+      margin: 0 auto 28px;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(0 10px 14px rgba(0, 0, 0, 0.7))
+        drop-shadow(0 0 12px rgba(216, 11, 53, 0.3));
+    }
+
+    .category {
+      margin: 0 0 10px;
+
+      color: var(--rouge-clair);
+
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      margin: 0;
+
+      color: var(--blanc);
+
+      font-size: clamp(43px, 12vw, 68px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 1px;
+    }
+
+    .line {
+      width: 75px;
+      height: 5px;
+
+      margin: 25px auto;
+
+      background: var(--rouge);
+
+      border-radius: 10px;
+    }
+
+    .intro {
+      max-width: 440px;
+
+      margin: 0 auto 36px;
+
+      color: var(--gris);
+
+      font-size: clamp(18px, 4.5vw, 23px);
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    .ressenti-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      min-height: 68px;
+
+      padding: 16px 25px;
+
+      color: var(--blanc);
+      background: var(--rouge);
+
+      border: 2px solid var(--rouge-clair);
+      border-radius: 18px;
+
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+
+      text-decoration: none;
+
+      box-shadow:
+        0 0 22px rgba(216, 11, 53, 0.38);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .ressenti-button:hover,
+    .ressenti-button:focus-visible {
+      background: var(--rouge-clair);
+
+      box-shadow:
+        0 0 30px rgba(216, 11, 53, 0.6);
+
+      transform: translateY(-2px);
+
+      outline: none;
+    }
+
+    .ressenti-button:active {
+      transform: scale(0.985);
+    }
+
+    .signature {
+      margin: 32px 0 0;
+
+      color: #777777;
+
+      font-size: 15px;
+      letter-spacing: 1.5px;
+    }
+
+    @media (max-width: 430px) {
+
+      .home-page {
+        padding-right: 14px;
+        padding-left: 14px;
+      }
+
+      .home-card {
+        padding:
+          38px
+          18px
+          32px;
+
+        border-radius: 23px;
+      }
+
+      .logo {
+        width: 110px;
+        height: 110px;
+
+        margin-bottom: 24px;
+      }
+
+      .ressenti-button {
+        min-height: 64px;
+
+        font-size: 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <main class="home-page">
+
+    <section class="home-card">
+
+      <img
+        src="logo.png"
+        alt="Logo FC Fleury 91"
+        class="logo"
+      >
+
+      <p class="category">
+        FCF91 U14F
+      </p>
+
+      <h1>
+        MON RESSENTI
+      </h1>
+
+      <div class="line"></div>
+
+      <p class="intro">
+        Prends quelques instants pour partager ton ressenti
+        après la séance.
+      </p>
+
+      <a
+        href="ressenti.html"
+        class="ressenti-button"
+      >
+        REMPLIR MON RESSENTI
+      </a>
+
+      <p class="signature">
+        STAFF U14F • FC FLEURY 91
+      </p>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
