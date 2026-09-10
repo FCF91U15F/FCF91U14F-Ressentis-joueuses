@@ -1,1 +1,1008 @@
 
+/* =========================
+   STYLE GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Oswald',sans-serif;
+    background:#050505;
+    color:white;
+}
+
+.form-page{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top, rgba(200,16,46,0.20), transparent 40%),
+        linear-gradient(180deg,#050505 0%,#000000 100%);
+    padding:30px 0;
+}
+
+/* =========================
+   CONTENEUR
+========================= */
+
+.form-container{
+    width:92%;
+    max-width:780px;
+    margin:0 auto;
+    background:#0b0b0b;
+    border:1px solid rgba(200,16,46,.45);
+    border-radius:24px;
+    padding:32px;
+    box-shadow:0 0 35px rgba(200,16,46,.15);
+}
+
+.small-logo{
+    width:90px;
+    display:block;
+    margin:0 auto 20px;
+}
+
+.form-container h1{
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:30px;
+    letter-spacing:2px;
+}
+
+/* =========================
+   FORMULAIRE
+========================= */
+
+.form-group{
+    margin-bottom:32px;
+}
+
+label{
+    display:block;
+    margin-bottom:14px;
+    font-size:1.05rem;
+    font-weight:500;
+}
+
+input[type="text"],
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid #333;
+    background:#111;
+    color:white;
+    font-size:1rem;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+/* =========================
+   HUMEUR / SOMMEIL
+========================= */
+
+.ratings{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+}
+
+.option{
+    border:2px solid #c8102e;
+    border-radius:16px;
+    padding:14px 8px;
+    text-align:center;
+    cursor:pointer;
+    transition:.25s;
+    background:#111;
+    min-height:120px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.option input{
+    display:none;
+}
+
+.option .value{
+    font-size:1.25rem;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.option .legend{
+    font-size:.72rem;
+    color:#d6d6d6;
+    line-height:1.2;
+}
+
+.option.selected{
+    background:#c8102e;
+    box-shadow:0 0 18px rgba(200,16,46,.45);
+}
+
+.option.selected .legend{
+    color:white;
+}
+
+/* =========================
+   RPE
+========================= */
+
+.rpe-display{
+    text-align:center;
+    font-size:1.5rem;
+    font-weight:700;
+    color:#ffffff;
+    margin-bottom:18px;
+}
+
+.rpe-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:10px;
+}
+
+.rpe-btn{
+    border:2px solid #666;
+    border-radius:14px;
+    padding:16px 0;
+    text-align:center;
+    cursor:pointer;
+    transition:.25s;
+    background:#111;
+}
+
+.rpe-btn input{
+    display:none;
+}
+
+.rpe-btn span{
+    font-size:1.1rem;
+    font-weight:700;
+}
+
+.rpe-btn.selected{
+    background:#c8102e;
+    border-color:#c8102e;
+    box-shadow:0 0 16px rgba(200,16,46,.45);
+}
+
+/* =========================
+   LÉGENDE RPE
+========================= */
+
+.rpe-legend-bars{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-top:18px;
+}
+
+.rpe-legend-bars div{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:.82rem;
+    color:#ddd;
+}
+
+.bar{
+    width:28px;
+    height:8px;
+    border-radius:999px;
+    display:inline-block;
+}
+
+.bar.green{background:#22c55e;}
+.bar.yellow{background:#facc15;}
+.bar.orange{background:#f97316;}
+.bar.red{background:#ef4444;}
+
+/* =========================
+   BOUTON ENVOYER
+========================= */
+
+.btn{
+    width:100%;
+    padding:16px;
+    border-radius:16px;
+    border:2px solid #c8102e;
+    background:#111;
+    color:white;
+    font-size:1.05rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.btn:hover{
+    background:#c8102e;
+    box-shadow:0 0 22px rgba(200,16,46,.45);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:700px){
+
+    .form-container{
+        padding:24px;
+    }
+
+    .ratings{
+        gap:8px;
+    }
+
+    .option{
+        min-height:110px;
+        padding:12px 6px;
+    }
+
+    .option .value{
+        font-size:1.1rem;
+    }
+
+    .option .legend{
+        font-size:.62rem;
+    }
+
+    .rpe-grid{
+        gap:8px;
+    }
+
+    .rpe-btn{
+        padding:14px 0;
+    }
+
+   /* =========================================================
+   PAGE D'ACCUEIL — FCF91 U15F
+   ========================================================= */
+
+.home-page {
+    margin: 0;
+    min-height: 100%;
+    background: #030303;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.home-page,
+.home-page * {
+    box-sizing: border-box;
+}
+
+.home-screen {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        max(32px, env(safe-area-inset-top))
+        24px
+        max(32px, env(safe-area-inset-bottom));
+
+    background:
+        radial-gradient(
+            circle at 25% 42%,
+            rgba(210, 0, 40, 0.35) 0%,
+            rgba(120, 0, 20, 0.16) 20%,
+            transparent 47%
+        ),
+        radial-gradient(
+            circle at 78% 38%,
+            rgba(235, 0, 35, 0.38) 0%,
+            rgba(105, 0, 15, 0.17) 22%,
+            transparent 48%
+        ),
+        linear-gradient(
+            180deg,
+            #020202 0%,
+            #090304 46%,
+            #020202 100%
+        );
+}
+
+/* Texture légère */
+
+.home-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    opacity: 0.3;
+
+    background-image:
+        linear-gradient(
+            115deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.025) 48%,
+            transparent 50%
+        ),
+        repeating-linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.015) 0,
+            rgba(255, 255, 255, 0.015) 1px,
+            transparent 1px,
+            transparent 13px
+        );
+}
+
+/* Petites particules rouges */
+
+.home-screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    opacity: 0.45;
+
+    background-image:
+        radial-gradient(circle, #ef1639 0 1px, transparent 2px),
+        radial-gradient(circle, #b80020 0 1px, transparent 2px);
+
+    background-size:
+        79px 91px,
+        113px 127px;
+
+    background-position:
+        20px 30px,
+        55px 70px;
+}
+
+/* Fumée décorative */
+
+.home-smoke {
+    position: absolute;
+    z-index: 1;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+    filter: blur(55px);
+    opacity: 0.34;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(242, 0, 45, 0.8) 0%,
+            rgba(167, 0, 25, 0.38) 35%,
+            transparent 72%
+        );
+
+    animation: homeSmoke 8s ease-in-out infinite alternate;
+}
+
+.home-smoke-left {
+    left: -220px;
+    top: 22%;
+}
+
+.home-smoke-right {
+    right: -210px;
+    top: 27%;
+    animation-delay: -4s;
+}
+
+.home-vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 35%,
+            rgba(0, 0, 0, 0.35) 70%,
+            rgba(0, 0, 0, 0.88) 100%
+        );
+}
+
+/* Contenu principal */
+
+.home-content {
+    position: relative;
+    z-index: 3;
+
+    width: min(100%, 520px);
+    min-height: calc(100svh - 64px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+/* Logo */
+
+.home-logo-wrapper {
+    position: relative;
+
+    width: min(76vw, 360px);
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+}
+
+.home-logo-glow {
+    position: absolute;
+    inset: 13%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(235, 0, 40, 0.62) 0%,
+            rgba(190, 0, 30, 0.26) 38%,
+            transparent 72%
+        );
+
+    filter: blur(24px);
+    animation: homeGlow 2.8s ease-in-out infinite alternate;
+}
+
+.home-logo {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+    width: 88%;
+    height: 88%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 15px 20px rgba(0, 0, 0, 0.75))
+        drop-shadow(0 0 13px rgba(221, 5, 42, 0.25));
+
+    animation: homeLogoEntrance 1s ease both;
+}
+
+/* Titre */
+
+.home-title-wrapper {
+    width: min(90%, 470px);
+    margin-bottom: clamp(58px, 10vh, 110px);
+}
+
+.home-line {
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #e00c34 25%,
+            #ff3152 50%,
+            #e00c34 75%,
+            transparent
+        );
+
+    box-shadow: 0 0 12px rgba(237, 12, 52, 0.55);
+}
+
+.home-title {
+    margin: 17px 0;
+
+    color: #ffffff;
+
+    font-family:
+        Impact,
+        Haettenschweiler,
+        "Arial Narrow Bold",
+        sans-serif;
+
+    font-size: clamp(42px, 12vw, 76px);
+    font-weight: 900;
+    font-style: italic;
+
+    line-height: 0.95;
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 5px 0 rgba(255, 255, 255, 0.06),
+        0 12px 22px rgba(0, 0, 0, 0.8);
+}
+
+.home-title span {
+    color: #ffffff;
+}
+
+/* Bouton */
+
+.home-button {
+    width: min(88%, 440px);
+    min-height: 84px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 19px;
+
+    padding: 20px 28px;
+
+    color: #ffffff;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(16, 16, 16, 0.98),
+            rgba(4, 4, 4, 0.98)
+        );
+
+    border: 3px solid #ed123a;
+    border-radius: 24px;
+
+    font-family:
+        Impact,
+        Haettenschweiler,
+        "Arial Narrow Bold",
+        sans-serif;
+
+    font-size: clamp(23px, 6vw, 33px);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+        0 0 17px rgba(237, 18, 58, 0.42),
+        0 16px 32px rgba(0, 0, 0, 0.65);
+
+    transition:
+        transform 0.22s ease,
+        background 0.22s ease,
+        box-shadow 0.22s ease;
+
+    animation:
+        homeButtonEntrance 1s 0.25s ease both,
+        homeButtonPulse 2.6s 1.3s ease-in-out infinite;
+}
+
+.home-button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+    line-height: 1;
+
+    transform: translateY(-1px);
+}
+
+.home-button:hover,
+.home-button:focus-visible {
+    transform: translateY(-4px) scale(1.015);
+
+    background:
+        linear-gradient(
+            180deg,
+            #e51039,
+            #a90022
+        );
+
+    box-shadow:
+        0 0 28px rgba(237, 18, 58, 0.75),
+        0 20px 38px rgba(0, 0, 0, 0.7);
+
+    outline: none;
+}
+
+.home-button:active {
+    transform: scale(0.98);
+}
+
+/* Animations */
+
+@keyframes homeLogoEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(-22px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes homeButtonEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes homeGlow {
+    from {
+        opacity: 0.4;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 0.8;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes homeSmoke {
+    from {
+        transform: translate3d(-15px, -10px, 0) scale(0.92);
+    }
+
+    to {
+        transform: translate3d(20px, 15px, 0) scale(1.1);
+    }
+}
+
+@keyframes homeButtonPulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+            0 0 14px rgba(237, 18, 58, 0.35),
+            0 16px 32px rgba(0, 0, 0, 0.65);
+    }
+
+    50% {
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+            0 0 26px rgba(237, 18, 58, 0.62),
+            0 16px 32px rgba(0, 0, 0, 0.65);
+    }
+}
+
+/* Adaptation aux petits téléphones */
+
+@media (max-width: 420px) {
+    .home-screen {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .home-logo-wrapper {
+        width: min(75vw, 310px);
+        margin-bottom: 8px;
+    }
+
+    .home-title-wrapper {
+        margin-bottom: clamp(42px, 8vh, 72px);
+    }
+
+    .home-button {
+        min-height: 75px;
+        border-radius: 20px;
+    }
+}
+
+/* Téléphones peu hauts */
+
+@media (max-height: 700px) {
+    .home-content {
+        justify-content: flex-start;
+        padding-top: 18px;
+        padding-bottom: 24px;
+    }
+
+    .home-logo-wrapper {
+        width: min(58vw, 265px);
+        margin-bottom: 3px;
+    }
+
+    .home-title-wrapper {
+        margin-bottom: 32px;
+    }
+
+    .home-title {
+        font-size: clamp(38px, 10vw, 57px);
+    }
+
+    .home-button {
+        min-height: 68px;
+    }
+}
+
+/* Réduction des animations si demandée par l'appareil */
+
+@media (prefers-reduced-motion: reduce) {
+    .home-logo,
+    .home-button,
+    .home-logo-glow,
+    .home-smoke {
+        animation: none;
+    }
+}
+    .rpe-legend-bars{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================================================
+   CORRECTION FINALE — PAGE RESSENTI UNIQUEMENT
+   Ne modifie pas la page d'accueil
+   ========================================================= */
+
+.form-page .rating-fieldset,
+.form-page .rpe-section {
+  min-width: 0;
+  margin: 0 0 55px;
+  padding: 0;
+  border: 0;
+}
+
+.form-page .rating-fieldset > legend,
+.form-page .rpe-section > legend {
+  width: 100%;
+  margin: 0 0 24px;
+  padding: 0;
+
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(25px, 6vw, 34px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   HUMEUR ET SOMMEIL
+   ========================================================= */
+
+.form-page .ratings {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(8px, 2.5vw, 18px);
+
+  width: 100%;
+  align-items: start;
+}
+
+.form-page .option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.form-page .option input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Le chiffre est seul dans le carré */
+
+.form-page .option .value {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: #111111;
+
+  border: 3px solid #d81038;
+  border-radius: 17px;
+
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(28px, 7vw, 42px);
+  font-weight: 700;
+  line-height: 1;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* La légende est à l'extérieur, sous le carré */
+
+.form-page .option .legend {
+  display: block;
+  width: 100%;
+  min-height: 42px;
+
+  margin-top: 11px;
+
+  color: #d8d8d8;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(12px, 3.1vw, 17px);
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: center;
+
+  overflow-wrap: anywhere;
+}
+
+/* Sélection Humeur / Sommeil */
+
+.form-page .option.selected .value,
+.form-page .option:has(input:checked) .value {
+  color: #ffffff;
+  background: #d80b35;
+  border-color: #ed1747;
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+    0 0 20px rgba(227, 10, 54, 0.62);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   RPE
+   ========================================================= */
+
+.form-page .rpe-display {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 9px;
+
+  margin: 4px 0 25px;
+
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(39px, 10vw, 58px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.form-page .rpe-total {
+  color: #ffffff;
+}
+
+/*
+  Grille de 12 colonnes :
+  - ligne 1 : 6 boutons de deux colonnes
+  - ligne 2 : 5 boutons, décalés d'une colonne pour être centrés
+*/
+
+.form-page .rpe-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(9px, 2.5vw, 17px);
+
+  width: 100%;
+  align-items: center;
+}
+
+.form-page .rpe-btn {
+  grid-column: span 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  aspect-ratio: 1 / 1;
+
+  color: #ffffff;
+  background: #111111;
+
+  border: 3px solid #606060;
+  border-radius: 17px;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Le bouton 6 commence une colonne plus loin */
+
+.form-page .rpe-btn:nth-child(7) {
+  grid-column: 2 / span 2;
+}
+
+.form-page .rpe-btn input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-page .rpe-btn span {
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(26px, 6.5vw, 39px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Sélection RPE */
+
+.form-page .rpe-btn.selected,
+.form-page .rpe-btn:has(input:checked) {
+  background: #d80b35;
+  border-color: #ed1747;
+
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+    0 0 20px rgba(227, 10, 54, 0.62);
+
+  transform: translateY(-2px);
+}
+
+/* Suppression définitive de l'ancienne légende RPE */
+
+.form-page .rpe-legend-bars {
+  display: none !important;
+}
+
+/* =========================================================
+   PETITS TÉLÉPHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+  .form-page .ratings {
+    gap: 7px;
+  }
+
+  .form-page .option .value {
+    border-width: 2px;
+    border-radius: 13px;
+  }
+
+  .form-page .option .legend {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+
+  .form-page .rpe-grid {
+    gap: 8px;
+  }
+
+  .form-page .rpe-btn {
+    border-width: 2px;
+    border-radius: 13px;
+  }
+}
