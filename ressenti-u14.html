@@ -1,1 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta name="theme-color" content="#050505">
+
+  <title>Mon ressenti — FCF91 U14F</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS réservé uniquement à la page Ressenti U14F -->
+  <link rel="stylesheet" href="ressenti-u14.css?v=1">
+</head>
+
+<body>
+
+  <main class="ressenti-page">
+
+    <!-- En-tête -->
+    <header class="ressenti-header">
+
+      <a href="index.html" class="back-button">
+        ← Retour à l’accueil
+      </a>
+
+      <img
+        src="logo.png"
+        alt="Logo du FC Fleury 91"
+        class="ressenti-logo"
+      >
+
+      <h1>MON RESSENTI</h1>
+
+      <p>FCF91 U14F</p>
+
+    </header>
+
+    <!-- Formulaire -->
+    <form id="ressentiForm" class="ressenti-form">
+
+      <!-- Prénom -->
+      <section class="form-section">
+
+        <label for="prenom" class="section-title">
+          Prénom de la joueuse
+        </label>
+
+        <select
+          id="prenom"
+          name="prenom"
+          class="select-input"
+          required
+        >
+          <option value="">
+            -- Choisir son prénom --
+          </option>
+        </select>
+
+      </section>
+
+      <!-- Plaisir / humeur -->
+      <section class="form-section">
+
+        <h2 class="section-title">
+          À quel point as-tu pris du plaisir pendant cette séance ?
+        </h2>
+
+        <div class="rating-grid">
+
+          <label class="rating-choice">
+            <input
+              type="radio"
+              name="humeur"
+              value="1"
+              required
+            >
+            <span class="rating-square">1</span>
+            <span class="rating-label">Aucun</span>
+          </label>
+
+          <label class="rating-choice">
+            <input
+              type="radio"
+              name="humeur"
+              value="2"
+            >
+            <span class="rating-square">2</span>
+            <span class="rating-label">Peu</span>
+          </label>
+
+          <label class="rating-choice">
+            <input
+              type="radio"
+              name="humeur"
+              value="3"
+              checked
+            >
+            <span class="rating-square">3</span>
+            <span class="rating-label">Modéré</span>
+          </label>
+
+          <label class="rating-choice">
+            <input
+              type="radio"
+              name="humeur"
+              value="4"
+            >
+            <span class="rating-square">4</span>
+            <span class="rating-label">Beaucoup</span>
+          </label>
+
+          <label class="rating-choice">
+            <input
+              type="radio"
+              name="humeur"
+              value="5"
+            >
+            <span class="rating-square">5</span>
+            <span class="rating-label">Énormément</span>
+          </label>
+
+        </div>
+
+      </section>
+
+      <!-- Sommeil -->
+      <section class="form-section">
+
+        <h2 class="section-title">
+          Qualité du sommeil
+        </h2>
+
+        <div class="rating-grid">
+
+          <label class="rating-choice">
+            <input
+              type="radio"
+              name="sommeil"
+              value="1"
+              required
+            >
+            <span class="rating-square">1</span>
+            <span class="rating-label">Très mauvais</span>
+          </label>
+
+          <label class="rating-choice">
+            <input
+              type="radio"
+              name="sommeil"
+              value="2"
+            >
+            <span class="rating-square">2</span>
+            <span class="rating-label">Mauvais</span>
+          </label>
+
+          <label class="rating-choice">
+            <input
+              type="radio"
+              name="sommeil"
+              value="3"
+              checked
+            >
+            <span class="rating-square">3</span>
+            <span class="rating-label">Moyen</span>
+          </label>
+
+          <label class="rating-choice">
+            <input
+              type="radio"
+              name="sommeil"
+              value="4"
+            >
+            <span class="rating-square">4</span>
+            <span class="rating-label">Bon</span>
+          </label>
+
+          <label class="rating-choice">
+            <input
+              type="radio"
+              name="sommeil"
+              value="5"
+            >
+            <span class="rating-square">5</span>
+            <span class="rating-label">Excellent</span>
+          </label>
+
+        </div>
+
+      </section>
+
+      <!-- RPE -->
+      <section class="form-section rpe-section">
+
+        <h2 class="section-title">
+          Ressenti de l’effort (RPE)
+        </h2>
+
+        <div
+          class="rpe-value-display"
+          aria-live="polite"
+        >
+          <span id="rpeValue">5</span>
+          <span class="rpe-total">/ 10</span>
+        </div>
+
+        <div class="rpe-scale">
+
+          <div class="rpe-numbers" aria-hidden="true">
+            <span>0</span>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>10</span>
+          </div>
+
+          <div
+            class="rpe-ruler"
+            id="rpeRuler"
+          >
+
+            <div
+              class="rpe-track"
+              aria-hidden="true"
+            >
+              <div class="rpe-track-fill"></div>
+            </div>
+
+            <div
+              class="rpe-ticks"
+              aria-hidden="true"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <input
+              type="range"
+              id="rpe"
+              name="rpe"
+              min="0"
+              max="10"
+              step="1"
+              value="5"
+              aria-label="Ressenti de l’effort entre 0 et 10"
+              required
+            >
+
+          </div>
+
+          <div class="rpe-extremes">
+            <span>Effort faible</span>
+            <span>Effort maximal</span>
+          </div>
+
+        </div>
+
+        <p class="rpe-help">
+          Il n’y a ni bonne, ni mauvaise réponse,
+          seul le ressenti personnel compte.
+        </p>
+
+      </section>
+
+      <!-- Douleur -->
+      <section class="form-section">
+
+        <label for="douleur" class="section-title">
+          Douleur ou gêne physique ?
+        </label>
+
+        <select
+          id="douleur"
+          name="douleur"
+          class="select-input"
+          required
+        >
+          <option value="Non">Non</option>
+          <option value="Oui">Oui</option>
+        </select>
+
+      </section>
+
+      <!-- Facteur limitant -->
+      <section class="form-section">
+
+        <label for="facteur" class="section-title">
+          Quel facteur t’a limitée ?
+        </label>
+
+        <select
+          id="facteur"
+          name="facteur"
+          class="select-input"
+          required
+        >
+          <option value="Aucun">
+            Aucun
+          </option>
+
+          <option value="Muscles lourds">
+            Mes muscles brûlaient ou étaient trop lourds
+          </option>
+
+          <option value="Souffle">
+            Mon souffle
+          </option>
+
+          <option value="Douleur">
+            Une douleur
+          </option>
+
+          <option value="Manque d’énergie">
+            Le manque d’énergie
+          </option>
+
+          <option value="Mental">
+            Le mental
+          </option>
+
+          <option value="Autre">
+            Autre
+          </option>
+        </select>
+
+      </section>
+
+      <!-- Commentaire -->
+      <section class="form-section">
+
+        <label for="commentaire" class="section-title">
+          Commentaire facultatif
+        </label>
+
+        <textarea
+          id="commentaire"
+          name="commentaire"
+          class="text-area"
+          rows="4"
+          placeholder="Tu peux préciser ton ressenti ici..."
+        ></textarea>
+
+      </section>
+
+      <!-- Envoi -->
+      <button
+        type="submit"
+        class="submit-button"
+      >
+        ENVOYER
+      </button>
+
+      <p
+        id="formMessage"
+        class="form-message"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+    </form>
+
+    <!-- Carte affichée après l’envoi -->
+    <section
+      id="successCard"
+      class="success-card"
+      aria-live="polite"
+      hidden
+    >
+
+      <div
+        class="success-stripes"
+        aria-hidden="true"
+      >
+        <span></span>
+        <span></span>
+      </div>
+
+      <img
+        src="logo.png"
+        alt="Logo du FC Fleury 91"
+        class="success-logo"
+      >
+
+      <h2 class="success-title">
+        MERCI
+        <span id="successPlayerName"></span>
+        !
+      </h2>
+
+      <div class="success-title-line"></div>
+
+      <p class="success-introduction">
+        Merci d’avoir pris le temps de partager ton ressenti.
+      </p>
+
+      <div
+        class="success-separator"
+        aria-hidden="true"
+      >
+        <span></span>
+        <i></i>
+        <span></span>
+      </div>
+
+      <blockquote
+        id="successMessage"
+        class="success-message"
+      ></blockquote>
+
+      <div
+        class="success-separator"
+        aria-hidden="true"
+      >
+        <span></span>
+        <i></i>
+        <span></span>
+      </div>
+
+      <p class="success-signature">
+        LE STAFF U14F
+      </p>
+
+      <a
+        href="index.html"
+        class="success-home-button"
+      >
+        RETOUR À L’ACCUEIL
+      </a>
+
+    </section>
+
+  </main>
+
+  <script src="script-u14.js?v=1"></script>
+
+</body>
+</html>
